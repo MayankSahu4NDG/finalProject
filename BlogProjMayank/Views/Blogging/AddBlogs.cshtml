@@ -1,0 +1,41 @@
+﻿@model MiniProjectApp.Models.BlogsTable
+
+@{
+    ViewBag.Title = "AddBlogs";
+}
+<div class="AddNew">
+    <h2 style="text-align:center;color:cadetblue;font-size:50px">Blog post Page</h2>
+</div>
+<div class="container1">
+    @using (Html.BeginForm())
+    {
+        <div class="row1">
+            @Html.HiddenFor(m => m.UId)<br />
+            <label>Title of Blog</label><br />
+            @Html.EditorFor(b => b.BlogTitle)<br />
+            <label>Place Image URL</label><br />
+            @Html.EditorFor(b => b.images)<br />
+            <label>Share your Experience</label><br />
+            @Html.EditorFor(b => b.messages)<br />
+            <label>Visit Date</label><br />
+            @Html.EditorFor(b => b.TravelDate)<br />
+            <label>Ratings</label><br />
+            @Html.EditorFor(b => b.ratings)<br />
+            <button class="btn btn-warning postBlogButton">Post Blog</button>
+        </div>
+    }
+
+    <style>
+        input{
+            min-width: 300px;
+            margin-bottom:20px;
+        }
+        .postBlogButton{
+            color: black;
+            font-size: 20px;
+            font-weight:bold;
+            margin-top:-5px;
+            margin-left:80px;
+        }
+    </style>
+</div>
